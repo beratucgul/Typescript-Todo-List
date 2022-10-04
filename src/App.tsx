@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import InputField from "./components/InputField";
-import TodoList from "./components/TodoList";
-import { Todo } from "./model";
+import InputField from "./components/inputField/InputField";
+import TodoList from "./components/todoList/TodoList";
+import { Todo } from "../models/todo/model";
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
@@ -16,8 +16,6 @@ const App: React.FC = () => {
       setTodo("");
     }
   };
-
-  console.log(todos);
 
   return (
     <div className="App">
