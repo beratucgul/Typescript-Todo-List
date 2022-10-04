@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "models/todo/model.ts"  ]
+, "models/todo/todoModel.ts"  ]
 }
