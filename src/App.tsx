@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import InputField from "./components/InputField";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+let name: string;
+let age: number | string; // age can be number or string
+let isTrue: boolean;
+let hobbies: string[];
+let role: [number, string];
+let personName: unknown; // unknown is better than nothing
+
+function printName(name: string) {
+  console.log(name);
+}
+
+let printAge: (age: number) => never; //void returns undefined but never returns nothing
+
+// type Person = {
+//   name: string;
+//   age?: number;  // ? means optional
+// };
+
+// let person: Person = {
+//   name: "Berat",
+//   age: 23,
+// };
+
+// let lotsOfPeople: Person[];
+
+interface Person {
+  // same as type in the 17th line.
+  name: string;
+  age?: number;
+}
+
+interface Guy extends Person {
+  profession: string;
+}
+
+const App: React.FC = () => { 
+  const [todo, setTodo] = useState<string>("")
+
+  return <div className="App">
+    <span className="heading">Taskify</span>
+    <InputField />
+  </div>;
 }
 
 export default App;
